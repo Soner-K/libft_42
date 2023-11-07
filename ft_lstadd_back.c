@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:59:40 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:32 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/07 12:51:54 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/07 14:49:51 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t size;
-	char *new;
+	size_t	i;
 
-	size = ft_strlen(s1) + ft_strlen(s2);
-	new = (char *)ft_calloc(size + 1, sizeof(char));
-	if (!new)
-		return (NULL);
-	ft_memcpy(new, s1, ft_strlen(s1));
-	ft_memcpy(new + ft_strlen(s1), s2, ft_strlen(s2));
-	new[size] = '\0';
-	return (new);
+	i = ft_lstsize(*lst) - 1;
+	if (!lst)
+		return ;
+	while (--i)
+	*lst = (*lst)->next;
+	new = (*lst)->next;
+	new->next = NULL;
 }

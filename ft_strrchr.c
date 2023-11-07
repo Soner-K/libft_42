@@ -1,25 +1,37 @@
- #include "libft.h"
- 
- char *ft_strrchr(const char *s, int c)
- {
-    int     i;
-    char    *ptr;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/05 17:59:56 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/07 14:48:53 by sokaraku         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    i = ft_strlen(s) - 1;
-    while (i >= 0)
-    {
-        if (s[i] == c)
-        {
-            ptr = (char *)&s[i];
-            return (ptr);
-        }
-        i--;
-    }
-    if (c == 0)
-    {
-        i = ft_strlen(s);
-        ptr = (char *)&s[i];
-        return (ptr);
-    }
-    return (NULL);
- }
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int i;
+	char *ptr;
+
+	i = ft_strlen(s) - 1;
+	while (i >= 0)
+	{
+		if (s[i] == c)
+		{
+			ptr = (char *)&s[i];
+			return (ptr);
+		}
+		i--;
+	}
+	if (c == 0)
+	{
+		i = ft_strlen(s);
+		ptr = (char *)&s[i];
+		return (ptr);
+	}
+	return (NULL);
+}

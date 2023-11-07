@@ -48,4 +48,5 @@ int main(int ac, char **av)
     ft_striteri(dst, ft_modify);
     ft_striteri(dst, ft_show);
 
+
 }
