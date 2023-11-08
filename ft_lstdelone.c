@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:50:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 16:26:41 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:46:36 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst)
 		return	;
+	del(lst->content);
+	free(lst);
 }
