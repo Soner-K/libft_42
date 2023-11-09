@@ -1,3 +1,6 @@
 main_bonus.c
 a.out
 ttt.c
+*.o
+Tester
+Makefile

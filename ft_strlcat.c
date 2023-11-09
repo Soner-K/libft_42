@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:42 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:35 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:14:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t i;
 	size_t j;
 
+	if ((!dst || !src) && size == 0)
+		return ((size_t) (NULL));
 	i = ft_strlen(dst);
 	j = ft_strlen(src);
 	if (size == 0 || i > size)

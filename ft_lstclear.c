@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:57:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/08 15:54:59 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:34:41 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	first = *lst;
 
-	if (!lst)
+	if (!lst || !del) //?del?
 		return ;
 	while ((*lst)->next)
 	{
@@ -41,5 +41,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = ptr;
 	}
-	first = NULL;
+	first = NULL; //pointeur initial a null automatiquement ?
 }

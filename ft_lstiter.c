@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 14:47:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 13:44:53 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/09 12:58:49 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/09 13:28:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	i = 0;//tester avec *lst while si taille ok
 	if (!lst)
-		return (0);
+		return ;
 	while (lst)
 	{
+		f(lst->content);
 		lst = lst->next;
-		i++;
 	}
-	return (i);
 }
+
+/*void	ft_print(void *content)
+{
+	printf("%s\n", (char *) content);
+}
+int main()
+{
+	t_list	*test;
+	t_list	*test_2;
+	t_list	*test_3;
+
+	test = ft_lstnew("test");
+	test_2 = ft_lstnew("test2");
+	test_3 = ft_lstnew("test_3");
+
+	ft_lstadd_front(&test, test_2);
+	ft_lstadd_front(&test_2, test_3);
+
+	ft_lstiter(test_3, ft_print);
+
+
+
+}*/

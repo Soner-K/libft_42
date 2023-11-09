@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:58:05 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/08 14:04:44 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:07:09 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*one_b;
+
+	if (!s)
+		return ;
 
 	one_b = s;
 	while (n--)

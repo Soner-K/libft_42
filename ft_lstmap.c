@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:59:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 16:34:55 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/09 13:19:10 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/09 13:48:05 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char *dest_2;
-	unsigned char *src_2;
+	t_list	*new;
 
-	if (!dest)
+	// new = ft_lstnew(f(new->content));
+	new = malloc(sizeof(t_list));
+	if (!new || !lst)
 		return (NULL);
-	dest_2 = dest;
-	src_2 = (unsigned char *)src;
-	while (n)
+	while (lst)
 	{
-		*dest_2 = *src_2;
-		dest_2++;
-		src_2++;
-		n--;
+		
 	}
-	return (dest);
 }

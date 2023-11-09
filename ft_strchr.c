@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:32 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:24 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:37:44 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,19 @@ char	*ft_strchr(const char *s, int c)
 	char *res;
 
 	i = 0;
+	if (c == 0)
+	{
+		res = (char *) &s[ft_strlen(s)];
+		return (res);
+	}
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char) c)
 		{
 			res = (char *)&s[i];
 			return (res);
 		}
 		i++;
-	}
-	if (c == 0)
-	{
-		if (s[i] == '\0')
-		{
-			res = (char *)&s[i];
-		}
 	}
 	return (NULL);
 }

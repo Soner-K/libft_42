@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:58:17 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:45:56 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:22:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if ((nmemb * size) <= 0)
+	if ((size != 0) && nmemb >= __SIZE_MAX__  / size)
+		return (NULL);
+	if (nmemb * size < 0)
 		return (NULL);
 	void *ptr;
 
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
+	if (nmemb == 0 || !size)
+		return (ptr);	
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

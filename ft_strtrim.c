@@ -6,13 +6,13 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:58 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:59:37 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_check(char c, char const *set)
+static char	ft_check(char c, char const *set)
 {
 	size_t	i;
 
@@ -28,12 +28,13 @@ static int	ft_check(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *str;
-	size_t first;
-	size_t last;
+	char	*str;
+	int		first;
+	int		last;
 
 	first = ft_check(s1[0], set);
 	last = ft_check(s1[ft_strlen(s1) - 1], set);
+	// printf("first = %d\net last = %d\n", first, last);
 	str = ft_calloc(ft_strlen(s1) - first - last + 1, sizeof(char));
 	if (!str)
 		return (NULL);
@@ -45,5 +46,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ft_memcpy(str, s1, ft_strlen(s1));
 	last = ft_strlen(str);
 	str[last] = '\0';
+	// printf("taille = %d\n", last);
+	// printf("chaine = %s\n", str);
 	return (str);
 }
+
+// int	main(void)
+// {
+// 	char s1[] = "aaaxxxtripouille";
+// 	char set[] = "ax";
+// 	size_t i = ft_strlen(set) - 1;
+// 	printf("%s\n", ft_strtrim("aaaxxxtripouille", "ax"));
+// 	printf("%d\n", ft_check(s1[i], set));
+// }
