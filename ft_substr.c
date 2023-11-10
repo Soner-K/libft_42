@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:00:00 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 17:38:31 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:29:05 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new;
 	size_t	i;
 
-	if (ft_strlen(s) < start && len > ft_strlen(s))
-		return (NULL);
 	new = (char *)ft_calloc((len + 1), sizeof(char));
 	if (!new)
 		return (NULL);
