@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:59:40 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:32 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/07 16:57:23 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/10 13:59:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t size;
-	char *new;
+// void	ft_lstclear(t_list **lst, void (*del)(void *))
+// {
+// 	size_t	i;
 
-	size = ft_strlen(s1) + ft_strlen(s2);
-	new = (char *)ft_calloc(size + 1, sizeof(char));
-	if (!new)
-		return (NULL);
-	ft_memcpy(new, s1, ft_strlen(s1));
-	ft_memcpy(new + ft_strlen(s1), s2, ft_strlen(s2));
-	new[size] = '\0';
-	return (new);
+// 	i = ft_lstsize(*lst);
+// 	del(*lst);
+// 	i--;
+// 	if (i != 0)
+// 		ft_lstclear(lst, del);
+// 	free(*lst);
+// 	if (i == 0)
+// 		lst = NULL;
+// }
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list *ptr;
+
+	// if (!lst || !del) //?del?
+	// 	return ;
+	while ((*lst))
+	{
+		ptr = (*lst)->next; 
+		ft_lstdelone(*lst, del);
+		*lst = ptr;
+	}
 }

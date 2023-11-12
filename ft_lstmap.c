@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:59:40 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:32 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/09 13:19:10 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/10 13:23:40 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t size;
-	char *new;
+// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// {
+// 	t_list	*new;
 
-	size = ft_strlen(s1) + ft_strlen(s2);
-	new = (char *)ft_calloc(size + 1, sizeof(char));
-	if (!new)
-		return (NULL);
-	ft_memcpy(new, s1, ft_strlen(s1));
-	ft_memcpy(new + ft_strlen(s1), s2, ft_strlen(s2));
-	new[size] = '\0';
-	return (new);
-}
+// 	// new = ft_lstnew(f(new->content));
+// 	new = malloc(sizeof(t_list));
+// 	if (!new || !lst)
+// 		return (NULL);
+// 	while (lst)
+// 	{
+		
+// 	}
+// }

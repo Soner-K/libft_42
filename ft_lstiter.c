@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:58:05 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 15:07:09 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/09 12:58:49 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/10 15:45:42 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	unsigned char	*one_b;
-
-	if (!s)
+	if (!lst || !f)
 		return ;
-
-	one_b = s;
-	while (n--)
+	while (lst)
 	{
-		*one_b = 0;
-		one_b++;
+		f(lst->content);
+		lst = lst->next;
 	}
 }
+
+/*void	ft_print(void *content)
+{
+	printf("%s\n", (char *) content);
+}
+int main()
+{
+	t_list	*test;
+	t_list	*test_2;
+	t_list	*test_3;
+
+	test = ft_lstnew("test");
+	test_2 = ft_lstnew("test2");
+	test_3 = ft_lstnew("test_3");
+
+	ft_lstadd_front(&test, test_2);
+	ft_lstadd_front(&test_2, test_3);
+
+	ft_lstiter(test_3, ft_print);
+
+
+
+}*/

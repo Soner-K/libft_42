@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 17:59:40 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:32 by sokaraku         ###   ########.fr       */
+/*   Created: 2023/11/07 14:47:39 by sokaraku          #+#    #+#             */
+/*   Updated: 2023/11/09 13:44:53 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_lstsize(t_list *lst)
 {
-	size_t size;
-	char *new;
+	int	i;
 
-	size = ft_strlen(s1) + ft_strlen(s2);
-	new = (char *)ft_calloc(size + 1, sizeof(char));
-	if (!new)
-		return (NULL);
-	ft_memcpy(new, s1, ft_strlen(s1));
-	ft_memcpy(new + ft_strlen(s1), s2, ft_strlen(s2));
-	new[size] = '\0';
-	return (new);
+	i = 0;//tester avec *lst while si taille ok
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
