@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:40 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:32 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:02:43 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t size;
-	char *new;
+	char		*new;
+	size_t		size;
 
 	size = ft_strlen(s1) + ft_strlen(s2);
 	new = (char *)ft_calloc(size + 1, sizeof(char));

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:47:39 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 13:44:53 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:49:18 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 0;//tester avec *lst while si taille ok
+	i = 0;
 	if (!lst)
 		return (0);
 	while (lst)

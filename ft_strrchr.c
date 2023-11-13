@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:56 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 14:40:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:51:37 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	char *ptr;
+	char	*ptr;
+	int		i;
 
 	i = ft_strlen(s) - 1;
 	while (i >= 0)

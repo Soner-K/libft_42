@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:10 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 15:04:57 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:59:10 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *dest_2;
-	unsigned char *src_2;
-	size_t i;
+	size_t			i;
+	unsigned char	*dest_2;
+	unsigned char	*src_2;
 
 	if (!dest || !src)
 		return (NULL);

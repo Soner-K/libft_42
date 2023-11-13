@@ -6,18 +6,27 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:58:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/10 17:18:56 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:06:04 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_negative(int n)
+{
+	if (n < 0)
+		return (1);
+	return (0);
+}
+
 char	*ft_itoa(int n)
 {
-	int i;
-	long nb;
-	char *str;
+	char	*str;
+	int		i;
+	long	nb;
+	char	negative;
 
+	negative = ft_negative(n);
 	i = 1;
 	nb = n;
 	if (n < 0)
@@ -25,8 +34,11 @@ char	*ft_itoa(int n)
 		i++;
 		nb *= -1;
 	}
-	while (n /= 10)
+	while (n)
+	{
 		i++;
+		n /= 10;
+	}
 	str = (char *)ft_calloc(i + 1, sizeof(char));
 	if (!str)
 		return (NULL);
@@ -36,7 +48,9 @@ char	*ft_itoa(int n)
 		str[i--] = nb % 10 + '0';
 		nb /= 10;
 	}
-	if (str[0] == '0' && str[1])
-		str[0] = '-';
+	// if (str[0] == '0' && str[1])
+	// 	str[0] = '-';
+	if (negative == 1)
+		return ()
 	return (str);
 }

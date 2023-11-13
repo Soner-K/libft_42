@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:01 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 15:59:28 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:56:14 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
-	unsigned char *s_2;
+	unsigned char	*s_2;
+	size_t			i;
 
 	i = 0;
 	s_2 = (unsigned char *)s;
 	while (i < n)
 	{
-		if (s_2[i] == (unsigned char)  c)
+		if (s_2[i] == (unsigned char) c)
 			return (&(s_2[i]));
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:22 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:16 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:00:23 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nb;
+	long	nb;
 
 	nb = n;
 	if (nb < 0)

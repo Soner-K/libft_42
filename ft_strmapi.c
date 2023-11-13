@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:49 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:48:45 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:50:29 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
-	char *str;
-	char *bis;
+	char			*bis;
+	char			*str;
+	unsigned int	i;
 
 	i = 0;
 	str = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));

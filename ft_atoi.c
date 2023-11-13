@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:55:55 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/07 14:45:01 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:51:03 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int num;
-	int i;
-	int sign;
+	int	num;
+	int	i;
+	int	sign;
 
 	num = 0;
 	i = 0;

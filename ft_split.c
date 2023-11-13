@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/10 15:29:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:00:37 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static size_t	ft_count_words(char const *s, char c)
 	}
 	return (count);
 }
- 
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

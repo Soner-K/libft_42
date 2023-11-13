@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:05 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/10 12:10:41 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:57:08 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *s1_char;
-	unsigned char *s2_char;
-	int diff;
+	int				diff;
+	unsigned char	*s1_char;
+	unsigned char	*s2_char;
 
 	s1_char = (unsigned char *)s1;
 	s2_char = (unsigned char *)s2;

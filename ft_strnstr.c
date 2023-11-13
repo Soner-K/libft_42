@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/10 15:35:36 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:51:14 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t j;
-	char *str;
+	char	*str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

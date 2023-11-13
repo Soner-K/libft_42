@@ -6,30 +6,49 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:00:00 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/10 15:29:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:31:26 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	size_t	ft_pars(char const *s, unsigned int *start, size_t *len)
+{
+	size_t	len_s;
+
+	len_s = ft_strlen(s);
+	if ((*start) > len_s)
+	{
+		*len = 0;
+		return (1);
+	}
+	if ((*len) >= len_s)
+	{
+		if (*start < *len && (*len - *start) < len_s)
+			*len -= *start;
+		else
+			*len = len_s;
+	}
+	return (0);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new;
 	size_t	i;
 
-	new = (char *)ft_calloc((len + 1), sizeof(char));
+	if (ft_pars(s, &start, &len))
+	{
+		new = ft_calloc(1, sizeof(char));
+		new[0] = '\0';
+	}
+	else
+		new = ft_calloc(len + 1, sizeof(char));
 	if (!new)
 		return (NULL);
 	i = 0;
-	if (ft_strlen(s) > start )
-	{
-		while (s[start] && len--)
-		{
-			new[i] = (char)s[start];
-			i++;
-			start++;
-		}
-	}
+	while (len-- && s[start])
+		new[i++] = s[start++];
 	new[i] = '\0';
 	return (new);
 }

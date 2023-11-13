@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/09 16:34:55 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:57:30 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *dest_2;
-	unsigned char *src_2;
+	unsigned char	*dest_2;
+	unsigned char	*src_2;
 
 	if (!dest)
 		return (NULL);
