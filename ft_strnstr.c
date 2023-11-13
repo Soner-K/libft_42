@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/11 19:51:14 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:21:03 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!little[0])
-		return ((char *) big);
+	if (!big && len <= 0)
+		return (NULL);
+	if ((!big[0] && !little[0]) || ((!little[0]) && big[0]))
+		return ((char *)big);
 	while (big[i] && i < len)
 	{
 		while (big[i + j] == little[j])

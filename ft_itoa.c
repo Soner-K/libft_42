@@ -6,34 +6,36 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:58:52 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/11 21:06:04 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:43:22 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_negative(int n)
+static void	ft_set(char *sign, short int *i, int *n, long *nb)
 {
-	if (n < 0)
-		return (1);
-	return (0);
+	*i = 0;
+	*nb = *n;
+	if (*n < 0)
+	{
+		(*i)++;
+		*nb *= -1;
+		*sign = 1;
+	}
+	else
+		*sign = 0;
+	if (*n == 0)
+		*i = 1;
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
-	long	nb;
-	char	negative;
+	char		*str;
+	short int	i;
+	long		nb;
+	char		sign;
 
-	negative = ft_negative(n);
-	i = 1;
-	nb = n;
-	if (n < 0)
-	{
-		i++;
-		nb *= -1;
-	}
+	ft_set(&sign, &i, &n, &nb);
 	while (n)
 	{
 		i++;
@@ -48,9 +50,7 @@ char	*ft_itoa(int n)
 		str[i--] = nb % 10 + '0';
 		nb /= 10;
 	}
-	// if (str[0] == '0' && str[1])
-	// 	str[0] = '-';
-	if (negative == 1)
-		return ()
+	if (sign == 1)
+		str[0] = '-';
 	return (str);
 }
