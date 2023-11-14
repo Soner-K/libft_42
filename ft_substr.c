@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:00:00 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/13 12:55:02 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:24:07 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	if (ft_pars(s, &start, &len))
 	{
 		new = ft_calloc(1, sizeof(char));

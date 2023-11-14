@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:57:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/11 19:34:01 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:06:43 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*ptr;
 
+	if (!lst || !del)
+		return ;
 	while ((*lst))
 	{
 		ptr = (*lst)->next;

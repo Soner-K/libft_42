@@ -6,11 +6,18 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:58 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/11 18:37:06 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:28:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_initialize(char *str, long *i, long *last, long *begin)
+{
+	*i = 0;
+	*begin = 0;
+	*last = ft_strlen(str) - 1;
+}
 
 static int	ft_inset(char c, char const *set)
 {
@@ -53,14 +60,14 @@ static int	ft_nowhere(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	last;
-	size_t	i;
-	size_t	begin;
+	long	last;
+	long	i;
+	long	begin;
 	char	*new;
 
-	last = ft_strlen(s1) - 1;
-	i = 0;
-	begin = 0;
+	if (!s1)
+		return (NULL);
+	ft_initialize((char *) s1, &i, &last, &begin);
 	while (ft_inset(s1[begin], set) == 1)
 		begin++;
 	while (ft_inset(s1[last], set) == 1 && last)
@@ -79,10 +86,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new[i] = '\0';
 	return (new);
 }
-
-// int	main(void)
-// {
-// 	// char s1[] = "aaaxxxtripouille";
-// 	// char set[] = "ax";
-// 	printf("\ntest ttrim = %s\n", ft_strtrim("", "123"));
-// }
