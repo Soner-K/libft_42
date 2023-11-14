@@ -40,6 +40,12 @@ static void	ft_iteri(unsigned int i, char *str)
 	*str = 'A';
 }
 
+static	char ft_mapi(unsigned int i, char c)
+{
+	(void) i;
+	return (ft_toupper(c));
+}
+
 int main(int ac, char **av)
 {
 	if (!(strcmp(av[ac - 1], "isa")) || !(strcmp(av[ac - 1], "tolower")) || !(strcmp(av[ac - 1], "toupper")))
@@ -70,32 +76,34 @@ int main(int ac, char **av)
 		printf("%s\n", dst);
 	}
 	if (!(strcmp(av[ac - 1], "memcmp")))
-	{
         printf("ft_memcmp(%s, %s, %zu) = %d\n", av[1], av[2], ft_atol(av[3]), ft_memcmp(av[1], av[2], ft_atol(av[3])));
-	}
+
 	if (!(strcmp(av[ac - 1], "strncmp")))
-	{
         printf("ft_strncmp(%s, %s, %zu) = %d\n", av[1], av[2], ft_atol(av[3]), ft_strncmp(av[1], av[2], ft_atol(av[3])));
-	}
+
 	if (!(strcmp(av[ac - 1], "strnstr")))
-	{
         printf("ft_strnstr(%s, %s, %zu) = %s\n", av[1], av[2], ft_atol(av[3]), ft_strnstr(av[1], av[2], ft_atol(av[3])));
-	}
-    if (!(strcmp(av[ac - 1], "str1")))
-    {
+
+    if (!(strcmp(av[ac - 1], "memchr")))
+	{
         printf("ft_memchr(%s, %d, %zu) = %s\n", av[1], ft_atoi(av[2]), ft_atol(av[3]), (char *) ft_memchr(av[1], ft_atoi(av[2]), ft_atol(av[3])));
-        printf("ft_strchr(%s, %d) = %s\n", av[1], ft_atoi(av[2]), ft_strchr(av[1], ft_atoi(av[2])));
-        printf("ft_strrchr(%s, %d) = %s\n", av[1], ft_atoi(av[2]), ft_strrchr(av[1], ft_atoi(av[2])));
-        printf("ft_memset(%s, %d, %zu) = %s\n", av[1], ft_atoi(av[2]), ft_atol(av[3]), (char *) ft_memset(av[1], ft_atoi(av[2]), ft_atol(av[3])));
-    }
+	}
+
+	if (!(strcmp(av[ac - 1], "strchr")))
+        printf("ft_strchr(%s, %s) = %s\n", av[1], av[2], ft_strchr(av[1], (av[2][0])));
+
+	if (!(strcmp(av[ac - 1], "strrchr")))
+        printf("ft_strrchr(%s, %s) = %s\n", av[1], av[2], ft_strrchr(av[1], (av[2][0])));
+
+	if (!(strcmp(av[ac - 1], "memset")))
+        printf("ft_memset(%s, %d, %zu) = %s\n", av[1], av[2][0], ft_atol(av[3]), (char *) ft_memset(av[1], av[2][0], ft_atol(av[3])));
+
     if (!(strcmp(av[ac - 1], "strlen")))
-    {
-        printf("ft_strlen(%s) = %zu\n", av[1], ft_strlen(av[1]));
-    }
+		printf("ft_strlen(%s) = %zu\n", av[1], ft_strlen(av[1]));;
+
     if (!(strcmp(av[ac - 1], "atoi")))
-    {
         printf("ft_atoi(%s) = %d\n", av[1], ft_atoi(av[1]));
-    }
+
     if (!(strcmp(av[ac - 1], "strl")))
     {
         char    *dst_cpy;
@@ -121,9 +129,7 @@ int main(int ac, char **av)
 		printf("%s\n", dst_cat);
     }
     if (!(strcmp(av[ac - 1], "strdup")))
-    {
         printf("ft_strdup(%s) = %s\n", av[1], ft_strdup(av[1]));
-	}
     if (!(strcmp(av[ac - 1], "bzero")))
 	{
         char *test;
@@ -136,21 +142,13 @@ int main(int ac, char **av)
     //     printf("ft_calloc(%s, %s) = %zu\n", av[1], av[2], (size_t) ft_calloc(ft_atoi(av[1]), ft_atoi(av[2])));
     // }
     if (!(strcmp(av[ac - 1], "substr")))
-    {
         printf("ft_substr(%s, %zu, %zu) = %s\n", av[1], ft_atol(av[2]), ft_atol(av[3]), ft_substr(av[1], ft_atol(av[2]), ft_atol(av[3])));
-    }
     if (!(strcmp(av[ac - 1], "strjoin")))
-    {
         printf("ft_strjoin(%s, %s) = %s\n", av[1], av[2], ft_strjoin(av[1], av[2]));
-    }
     if (!(strcmp(av[ac - 1], "strtrim")))
-    {
         printf("ft_strtrim(%s, %s) = %s\n", av[1], av[2], ft_strtrim(av[1], av[2]));
-    }
     if (!(strcmp(av[ac - 1], "itoa")))
-    {
         printf("ft_itoa(%s) = %s\n", av[1], ft_itoa(ft_atoi(av[1])));
-    }
     if (!(strcmp(av[ac - 1], "put")))
     {
 		// printf("ft_putchar_fd(%c, %d) = ", av[1][0], ft_atoi(av[3]));
@@ -191,5 +189,12 @@ int main(int ac, char **av)
 		ft_striteri(test, ft_iteri);
 		printf("ft_striteri(%s, ft_iteri) = %s\n", av[1], test);
 	}
-
+	if (!(strcmp(av[ac - 1], "strmapi")))
+	{
+		char	*test;
+		char	*new;
+		test = ft_strdup(av[1]);
+		new = ft_strmapi(test, ft_mapi);
+		printf("ft_strmapi(%s, ft_mapi) = %s\n", av[1], new);
+	}
 }
