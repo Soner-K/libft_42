@@ -6,12 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:54 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/13 13:21:03 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:35:49 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
