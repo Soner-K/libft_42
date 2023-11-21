@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:14:08 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/21 15:14:40 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:24:44 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int ft_check(char *str, int c)
 	while (str[i])
 	{
 		if (str[i] == (unsigned char) c)
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
