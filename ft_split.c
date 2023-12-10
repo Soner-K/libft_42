@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:28 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/20 16:19:52 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:40:42 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,20 @@ static size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
+static void	delete(char **tab, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	while (size--)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab[i]);
+	free(tab);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -70,7 +84,15 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (NULL);
 	while (i < words)
-		tab[i++] = ft_cut(s, c, &pos);
+	{
+		tab[i] = ft_cut(s, c, &pos);
+		if (!tab[i])
+		{
+			delete(tab, words);
+			return (NULL);
+		}
+		i++;
+	}
 	tab[words] = NULL;
 	return (tab);
 }
