@@ -28,7 +28,7 @@ fclean		:	clean
 
 re		:	fclean all
 
-$(EXEC)	:	$(SRC)
+$(EXEC)	:	$(OBJ)
 			@$(CC) $(CFLAGS) $^ -o $@
 
 run		:	$(EXEC)
