@@ -6,6 +6,8 @@ HEADER		=	includes/ft_printf.h
 
 OBJ			=	$(SRC:.c=.o)
 
+OBJ_LIBFT	=	$(SRC_LIBFT:.c=.o)
+
 NAME		=	libftprintf.a
 
 CC			=	cc
@@ -32,7 +34,7 @@ fclean		:	clean
 
 re		:	fclean all
 
-$(EXEC)		:	$(SRC) $(SRC_LIBFT)
+$(EXEC)		:	$(OBJ) $(OBJ_LIBFT)
 				@$(CC) $(CFLAGS) $^ -o $@
 
 run			:	$(EXEC)

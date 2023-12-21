@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:07:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/21 10:38:39 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:30:18 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(arg);
 	return (size);
-}
-
-int main()
-{
-	ft_printf("Salut %s", "Soner");
 }
