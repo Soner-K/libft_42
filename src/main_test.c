@@ -1,50 +1,50 @@
 
 
-#include "../includes/libft.h"
-#include <string.h>
-#include <bsd/string.h>
+// #include "../includes/libft.h"
+// #include <string.h>
+// #include <bsd/string.h>
 
-static size_t	ft_atol(char *nptr)
-{
-	size_t	num;
-	int	i;
-	int	sign;
+// static size_t	ft_atol(char *nptr)
+// {
+// 	size_t	num;
+// 	int	i;
+// 	int	sign;
 
-	num = 0;
-	i = 0;
-	sign = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
-	{
-		if (nptr[i] == '-')
-			sign = 1;
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		num *= 10;
-		num += (size_t)(nptr[i] - '0');
-		i++;
-		// printf("num = %zu\n", num);
-	}
-	// printf("num = %zu\n", num);
-	if (sign == 1)
-		return (-num);
-	return (num);
-}
+// 	num = 0;
+// 	i = 0;
+// 	sign = 0;
+// 	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+// 		i++;
+// 	if (nptr[i] == '+' || nptr[i] == '-')
+// 	{
+// 		if (nptr[i] == '-')
+// 			sign = 1;
+// 		i++;
+// 	}
+// 	while (nptr[i] >= '0' && nptr[i] <= '9')
+// 	{
+// 		num *= 10;
+// 		num += (size_t)(nptr[i] - '0');
+// 		i++;
+// 		// printf("num = %zu\n", num);
+// 	}
+// 	// printf("num = %zu\n", num);
+// 	if (sign == 1)
+// 		return (-num);
+// 	return (num);
+// }
 
-static void	ft_iteri(unsigned int i, char *str)
-{
-	(void) i;
-	*str = 'A';
-}
+// static void	ft_iteri(unsigned int i, char *str)
+// {
+// 	(void) i;
+// 	*str = 'A';
+// }
 
-static	char ft_mapi(unsigned int i, char c)
-{
-	(void) i;
-	return (ft_toupper(c));
-}
+// static	char ft_mapi(unsigned int i, char c)
+// {
+// 	(void) i;
+// 	return (ft_toupper(c));
+// }
 
 // int main(int ac, char **av)
 // {
