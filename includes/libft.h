@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:01:44 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/21 15:15:02 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/07 13:49:14 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../get_next_line/get_next_line.h"
+# include "../get_next_line/get_next_line_bonus.h"
+# include "../ft_printf/includes/ft_printf.h"
 
 typedef struct s_list
 {
