@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 13:30:42 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/02/07 13:31:37 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:16:24 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	i = 0;
 	s1_cp = (unsigned char *)s1;
 	s2_cp = (unsigned char *)s2;
-	while ((s1[i] || s2[i]))
+	while ((s1[i] && s2[i]))
 	{
 		if (s1_cp[i] != s2_cp[i])
 			return (s1_cp[i] - s2_cp[i]);
