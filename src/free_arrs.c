@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_strs.c                                        :+:      :+:    :+:   */
+/*   free_arrs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:19:01 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/02/08 11:21:25 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:20:40 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	free_strs(char **strs)
+void	free_arrs(void **arrs)
 {
 	int	i;
 
 	i = 0;
-	while (strs[i])
+	if (!arrs)
+		return ;
+	while (arrs[i])
 	{
-		free(strs[i]);
+		free(arrs[i]);
 		i++;
 	}
-	free(strs[i]);
-	free(strs);
+	free(arrs[i]);
+	free(arrs);
 }
