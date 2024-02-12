@@ -1,5 +1,5 @@
 SRC_LIBFT		=	$(wildcard src/*.c) 
-OBJ_LIBFT		=	$(SRC:.c=.o)
+OBJ_LIBFT		=	$(SRC_LIBFT:.c=.o)
 
 SRC_GNL	=	$(wildcard get_next_line/*.c)
 OBJ_GNL	=	$(SRC_GNL:.c=.o)
@@ -20,11 +20,11 @@ all		:	$(NAME)
 %.o		:	%.c
 			@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME)		:	$(OBJ) $(OBJ_GNL) $(OBJ_PRINTF)
-			@ar -rc $(NAME) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF)
+$(NAME)		:	$(OBJ_LIBFT) $(OBJ_GNL) $(OBJ_PRINTF)
+			@ar -rc $(NAME) $(OBJ_LIBFT) $(OBJ_GNL) $(OBJ_PRINTF)
 
 clean		:	
-			@rm -f $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) a.out
+			@rm -f $(OBJ_LIBFT) $(OBJ_GNL) $(OBJ_PRINTF) a.out
 
 fclean		:	clean
 			@rm -f $(NAME)
