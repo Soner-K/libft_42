@@ -6,15 +6,15 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:59:47 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/02/07 13:31:51 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:22:33 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-size_t	ft_strlen(const char *s)
+long	ft_strlen(const char *s)
 {
-	size_t	i;
+	long	i;
 
 	if (!s)
 		return (0);
