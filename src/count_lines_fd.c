@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:31:07 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/02/29 16:05:18 by sokaraku         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:07:48 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	count_lines_fd(int fd, char *path)
 			return (-1);
 		while (get_next_line(tmp_fd, 0))
 			i++;
+		get_next_line(tmp_fd, 1);
 		close(tmp_fd);
-		get_next_line(fd, 1);
 		return (i);
 	}
 	while (get_next_line(fd, 0))
