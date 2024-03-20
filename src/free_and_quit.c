@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   free_and_quit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 13:30:42 by sokaraku          #+#    #+#             */
-/*   Updated: 2024/03/12 17:33:56 by sokaraku         ###   ########.fr       */
+/*   Created: 2024/03/20 11:40:03 by sokaraku          #+#    #+#             */
+/*   Updated: 2024/03/20 11:41:25 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+/**
+ * @brief Prints a message to STD_ERROR, frees an array of string
+ * and then exit the program.
+ * @param msg The message to print.
+ * @param strs An array of strings.
+ * @returns void.
+ */
+void	free_and_quit(char *msg, char **strs)
 {
-	size_t			i;
-	unsigned char	*s1_cp;
-	unsigned char	*s2_cp;
-
-	if (!s1)
-		return (*s2);
-	else if (!s2)
-		return (*s1);
-	else if (!s1 && !s2)
-		return (0);
-	i = 0;
-	s1_cp = (unsigned char *)s1;
-	s2_cp = (unsigned char *)s2;
-	while ((s1[i] || s2[i]))
-	{
-		if (s1_cp[i] != s2_cp[i])
-			return (s1_cp[i] - s2_cp[i]);
-		i++;
-	}
-	return (0);
+	free_arrs((void **)strs);
+	ft_putendl_fd("Error", 2);
+	ft_putendl_fd(msg, 2);
+	exit(EXIT_FAILURE);
 }
